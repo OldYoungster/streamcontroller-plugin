@@ -2,7 +2,7 @@ from src.backend.PluginManager.ActionBase import ActionBase
 from typing import Any
 
 
-class SoundActionBase(ActionBase):
+class SoundBase(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -14,6 +14,8 @@ class SoundActionBase(ActionBase):
 
         if enforce_type and isinstance(value, enforce_type) is False:
             value = default
+
+        self.set_settings(settings)
 
         return value
 
